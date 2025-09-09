@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhi | Student Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #000;
+        }
+
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            color: #f3f4f6;
+        }
+
+        .card {
+            background-color: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .transition-transform {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .hover\:scale-105:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particle Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Header -->
+        <header class="p-6 md:p-8 flex justify-between items-center fixed top-0 left-0 w-full z-20">
+            <h1 class="text-xl md:text-2xl font-bold text-gray-100">Aadhi.</h1>
+            <nav>
+                <a href="#about" class="mx-2 md:mx-4 hover:text-cyan-400 transition-colors duration-300">About</a>
+                <a href="#skills" class="mx-2 md:mx-4 hover:text-cyan-400 transition-colors duration-300">Skills</a>
+                <a href="#projects" class="mx-2 md:mx-4 hover:text-cyan-400 transition-colors duration-300">Projects</a>
+                <a href="#contact" class="mx-2 md:mx-4 hover:text-cyan-400 transition-colors duration-300">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center p-4">
+            <div class="bg-gray-800 bg-opacity-40 p-8 rounded-xl shadow-lg border border-gray-700 max-w-2xl mx-auto transition-transform duration-500 transform hover:scale-105">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-4">Hello, I'm Aadhi</h2>
+                <p class="text-lg md:text-xl text-gray-300">A passionate student specializing in <span class="text-cyan-400">Web Development</span> and <span class="text-cyan-400">Data Science</span>.</p>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <a href="#projects" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full transition-colors duration-300 shadow-md">View My Work</a>
+                    <a href="#contact" class="px-6 py-3 bg-gray-600 hover:bg-gray-700 text-gray-200 font-semibold rounded-full transition-colors duration-300 shadow-md">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 p-4">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center text-white mb-10">About Me</h2>
+                <div class="card p-8 md:p-12 rounded-xl text-center shadow-lg transition-transform hover:scale-105">
+                    <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                        <img src="https://placehold.co/200x200/222222/FFFFFF?text=Aadhi" alt="Aadhi's photo" class="w-48 h-48 rounded-full border-4 border-cyan-500 mb-6 md:mb-0 shadow-lg">
+                        <div class="text-left">
+                            <p class="text-gray-300 leading-relaxed mb-4">
+                                Hi there! I'm a student at [Your University Name], with a strong interest in technology and innovation. I'm always looking for ways to build new things and solve problems, whether it's through code, data, or design.
+                            </p>
+                            <p class="text-gray-300 leading-relaxed">
+                                I enjoy collaborative projects and am eager to contribute my skills in full-stack development and data analysis to create impactful solutions. In my free time, I love to [Your hobbies, e.g., read, play games, hike].
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 p-4">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center text-white mb-10">My Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card p-6 rounded-xl text-center shadow-lg transition-transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-white mb-2">Programming Languages</h3>
+                        <p class="text-gray-400">JavaScript, Python, C++</p>
+                    </div>
+                    <div class="card p-6 rounded-xl text-center shadow-lg transition-transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-white mb-2">Web Development</h3>
+                        <p class="text-gray-400">HTML, CSS, React, Node.js, Tailwind CSS</p>
+                    </div>
+                    <div class="card p-6 rounded-xl text-center shadow-lg transition-transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-white mb-2">Databases</h3>
+                        <p class="text-gray-400">SQL, PostgreSQL, MongoDB</p>
+                    </div>
+                    <div class="card p-6 rounded-xl text-center shadow-lg transition-transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-white mb-2">Data & Analytics</h3>
+                        <p class="text-gray-400">Pandas, NumPy, Scikit-learn</p>
+                    </div>
+                    <div class="card p-6 rounded-xl text-center shadow-lg transition-transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-white mb-2">Tools & Platforms</h3>
+                        <p class="text-gray-400">Git, GitHub, Docker, VS Code</p>
+                    </div>
+                    <div class="card p-6 rounded-xl text-center shadow-lg transition-transform hover:scale-105">
+                        <h3 class="text-xl font-semibold text-white mb-2">Design</h3>
+                        <p class="text-gray-400">Figma, Adobe XD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 md:py-24 p-4">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center text-white mb-10">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-105">
+                        <img src="https://placehold.co/600x400/1e293b/FFFFFF?text=Project+1" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Project 1: [Name]</h3>
+                            <p class="text-gray-400 mb-4">A brief description of your project. This could be a web app, a data analysis, or a design concept.</p>
+                            <a href="#" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                    <div class="card rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-105">
+                        <img src="https://placehold.co/600x400/1e293b/FFFFFF?text=Project+2" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Project 2: [Name]</h3>
+                            <p class="text-gray-400 mb-4">A brief description of your project. Mention the technologies used and what you learned from it.</p>
+                            <a href="#" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                    <div class="card rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-105">
+                        <img src="https://placehold.co/600x400/1e293b/FFFFFF?text=Project+3" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Project 3: [Name]</h3>
+                            <p class="text-gray-400 mb-4">A brief description of your project. Explain the key features and its real-world application.</p>
+                            <a href="#" class="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 p-4 text-center">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-white mb-4">Get In Touch</h2>
+                <p class="text-gray-300 mb-8">Feel free to connect with me for collaborations, questions, or just to say hi!</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="mailto:aadhi@email.com" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <svg class="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.003 5.884L10 9.88l8-3.996L10 2l-8 3.884zM2 8.16l8 4.293L18 8.16v7.712L10 20.165l-8-4.293V8.16zM10 24c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.477 10-10 10z"></path>
+                        </svg>
+                        <span class="sr-only">Email</span>
+                    </a>
+                    <a href="#" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <svg class="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 16.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h4c.28 0 .5.22.5.5s-.22.5-.5.5h-4zM12 11c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM8.5 7.5h7c.28 0 .5-.22.5-.5s-.22-.5-.5-.5h-7c-.28 0-.5.22-.5.5s.22.5.5.5z"></path>
+                        </svg>
+                        <span class="sr-only">LinkedIn</span>
+                    </a>
+                    <a href="#" target="_blank" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <svg class="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.82-.25.82-.557v-1.922c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.492.997.108-.775.419-1.305.762-1.603-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.467-2.382 1.238-3.22-.124-.3-1.345-3.804.234-4.223 0 0 1.006-.322 3.303 1.23.957-.266 1.983-.399 3.004-.404 1.02.005 2.047.138 3.006.404 2.296-1.552 3.302-1.23 3.302-1.23 1.572.419.35 3.923.235 4.223.771.838 1.238 1.91 1.238 3.22 0 4.61-2.802 5.626-5.474 5.922.429.369.814 1.096.814 2.217v3.293c0 .308.217.67.825.557C20.565 21.808 24 17.308 24 12 24 5.373 18.627 0 12 0z"></path>
+                        </svg>
+                        <span class="sr-only">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-6 text-gray-400 text-sm border-t border-gray-700">
+            &copy; 2024 Aadhi. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let animationFrameId = null;
+            const particleCount = 100;
+            const mouse = {
+                x: undefined,
+                y: undefined,
+                radius: 100
+            };
+
+            function initCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            function createParticles() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.speedX = Math.random() * 0.5 - 0.25;
+                    this.speedY = Math.random() * 0.5 - 0.25;
+                    this.opacity = Math.random() * 0.5 + 0.1;
+                }
+
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+
+                    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                }
+
+                draw() {
+                    ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function drawLines() {
+                let opacity = 0.5;
+                for (let a = 0; a < particles.length; a++) {
+                    for (let b = a; b < particles.length; b++) {
+                        let dx = particles[a].x - particles[b].x;
+                        let dy = particles[a].y - particles[b].y;
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 120) {
+                            opacity = 1 - (distance / 120);
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            function connectOnHover() {
+                let opacity = 0.8;
+                for (let i = 0; i < particles.length; i++) {
+                    let dx = particles[i].x - mouse.x;
+                    let dy = particles[i].y - mouse.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < mouse.radius) {
+                        opacity = 1 - (distance / mouse.radius);
+                        ctx.strokeStyle = `rgba(0, 191, 255, ${opacity})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            function animate() {
+                animationFrameId = requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+                drawLines();
+                if (mouse.x && mouse.y) {
+                     connectOnHover();
+                }
+            }
+            
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.x;
+                mouse.y = e.y;
+            });
+            
+            window.addEventListener('resize', () => {
+                initCanvas();
+                createParticles();
+            });
+
+            // Initial setup
+            initCanvas();
+            createParticles();
+            animate();
+        });
+    </script>
+</body>
+</html>
